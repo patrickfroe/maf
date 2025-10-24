@@ -19,12 +19,12 @@ from maf_basic.skills import (  # noqa: E402
 )
 
 
-def _setup_agent() -> AgentApp:
+def _setup_agent(*, websearch_max_results: int) -> AgentApp:
     """Create and return an ``AgentApp`` with the default skills registered."""
 
     app = AgentApp()
     app.register_skill(EchoSkill())
-    app.register_skill(WebSearchSkill())
+    app.register_skill(WebSearchSkill(max_results=websearch_max_results))
     app.register_skill(ManagementSummarySkill())
     return app
 
@@ -44,6 +44,13 @@ def _build_parser() -> argparse.ArgumentParser:
         default=("exit", "quit"),
         help="Commands that terminate the session (default: exit quit)",
     )
+    parser.add_argument(
+        "--websearch-max-results",
+        type=int,
+        default=5,
+        metavar="N",
+        help="Number of search results returned by the WebSearchSkill (default: 5)",
+    )
     return parser
 
 
@@ -57,7 +64,9 @@ def run_cli() -> None:
     parser = _build_parser()
     args = parser.parse_args()
 
-    app = _setup_agent()
+    websearch_max_results = max(1, args.websearch_max_results)
+
+    app = _setup_agent(websearch_max_results=websearch_max_results)
     exit_commands = _normalize_exit_commands(args.exit_commands)
 
     print("Demo Agent CLI. Type your message and press enter. Type 'exit' to quit.")
