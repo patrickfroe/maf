@@ -1,4 +1,5 @@
 agent-framework
 python-dotenv
 PyYAML
+duckduckgo_search
 
