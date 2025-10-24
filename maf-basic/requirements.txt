@@ -1,1 +1,3 @@
 microsoft-agent-framework
+python-dotenv
+PyYAML
