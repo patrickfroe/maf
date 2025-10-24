@@ -12,7 +12,11 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from maf_basic.app import AgentApp  # noqa: E402  (import after sys.path patch)
-from maf_basic.skills.echo import EchoSkill  # noqa: E402
+from maf_basic.skills import (  # noqa: E402
+    EchoSkill,
+    ManagementSummarySkill,
+    WebSearchSkill,
+)
 
 
 def _setup_agent() -> AgentApp:
@@ -20,6 +24,8 @@ def _setup_agent() -> AgentApp:
 
     app = AgentApp()
     app.register_skill(EchoSkill())
+    app.register_skill(WebSearchSkill())
+    app.register_skill(ManagementSummarySkill())
     return app
 
 
