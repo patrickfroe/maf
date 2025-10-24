@@ -1,1 +1,4 @@
-microsoft-agent-framework
+# Dieses Projekt hat keine externen PyPI-Abhängigkeiten.
+# Die Datei existiert lediglich, damit "pip install -r requirements.txt"
+# ohne Fehler durchläuft und bei Bedarf zukünftige Abhängigkeiten ergänzt
+# werden können.
