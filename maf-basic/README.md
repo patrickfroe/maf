@@ -60,7 +60,7 @@ python -m maf_basic.cli --skill EchoSkill --exit-commands stoppen tschüss
 
 ### Websuche über die Kommandozeile
 
-Die `WebSearchSkill` nutzt wahlweise das Paket `duckduckgo_search`. Installiere es bei Bedarf zusätzlich:
+Die `WebSearchSkill` nutzt wahlweise das Paket `duckduckgo_search`, das inzwischen automatisch über die `requirements.txt` installiert wird. Bei Bedarf lässt es sich auch separat nachinstallieren:
 
 ```bash
 pip install duckduckgo_search
