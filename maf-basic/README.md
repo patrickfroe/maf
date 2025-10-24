@@ -16,10 +16,6 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-> **Hinweis:** Die Demo kommt ohne externe PyPI-Abhängigkeiten aus. Die Datei
-> `requirements.txt` ist bewusst leer gehalten, damit der Installationsbefehl
-> problemlos durchläuft und bei Bedarf künftig ergänzt werden kann.
-
 Alternativ lässt sich die Installation auch über `make install` anstoßen (siehe unten).
 
 ## Anwendung starten

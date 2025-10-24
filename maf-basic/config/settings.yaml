@@ -1,0 +1,12 @@
+connections:
+  default:
+    base_url: ${API_BASE_URL}
+    timeout_seconds: 30
+storage:
+  default:
+    backend: local
+    path: ${STORAGE_PATH}
+models:
+  primary:
+    provider: openai
+    name: ${PRIMARY_MODEL_NAME}
