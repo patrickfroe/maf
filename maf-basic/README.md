@@ -101,6 +101,17 @@ print(app.invoke("ManagementSummarySkill", query))
 
 Innerhalb derselben `AgentApp` greifen alle Fähigkeiten auf denselben Speicher zu. Die Summary-Fähigkeit fasst daher direkt die zuvor abgelegten Suchergebnisse zusammen. Das Muster eignet sich auch, um eigene Fähigkeiten zu registrieren oder alternative Storage-Implementierungen zu testen.
 
+
+## Chat UI im Browser
+
+Zusätzlich zur CLI gibt es jetzt eine einfache Chat-Oberfläche im Browser mit Nachrichtenliste, Eingabefeld, Ladezustand und Quellenanzeige unter jeder Antwort. Die UI sendet Anfragen per `POST /chat`.
+
+```bash
+python -m maf_basic.web
+```
+
+Danach ist die UI unter `http://127.0.0.1:8000` erreichbar.
+
 ## Tests ausführen
 
 Die vorhandenen Unit-Tests verwenden `pytest` und lassen sich über folgenden Befehl starten:
